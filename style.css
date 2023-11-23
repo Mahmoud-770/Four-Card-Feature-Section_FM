@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: hsl(234, 12%, 34%);
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "text"
+    "card"
+    "card";
+    background: hsl(0, 0%, 98%);
+}
+
+/* * * * * H E A D E R - T E X T * * * * */
+.mainTXT{
+    grid-area: text;
+    width: 500px;
+    text-align: center;
+}
+.mainTXT h1{margin-bottom: 10px;font-weight: 600}
+.mainTXT h1:first-child{font-weight: 200;}
+.mainTXT p{
+    font-size: 15px;
+    font-weight: 400;
+    color: hsl(229, 6%, 66%);
+}
+
+/* * * * * C A R D S - S E C T I O N * * * * */
+.cards{
+    grid-area: card;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3 , 1fr);
+}
+.cards .card{
+    height: 200px;width: 320px;
+    padding: 25px;position: relative;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px 0px hsl(229, 6%, 66%);
+}
+
+.one, .thr{
+    display: flex;
+    align-items: center;
+}
+.two{
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.one .card{border-top: 5px solid hsl(180, 62%, 55%);}
+.two .card{border-top: 5px solid hsl(0, 78%, 62%);}
+.two .card:last-child{border-top: 5px solid hsl(34, 97%, 64%);}
+.thr .card{border-top: 5px solid hsl(212, 86%, 64%);}
+
+.cards .card h1{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.cards .card p{
+    font-size: 13px;
+    font-weight: 400;
+    color: hsl(229, 6%, 66%);
+}
+.cards .card img{
+    width: 50px;
+    position: absolute;
+    bottom: 30px;right: 30px;
+}
+
+/* * * * * M O B I L E - S E C T I O N * * * * */
+@media (max-width:700px){
+    body{height: 1200px;}
+    .mainTXT{width: 300px;}
+    .mainTXT h1{font-size: 24px}
+
+    .cards{
+        display: flex;
+        flex-direction: column;
+    }
+}
